@@ -6,6 +6,8 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
 
+pygame.font.init()
+FONT = pygame.font.Font(None, 36)
 
 def main():
     pygame.init()
@@ -43,6 +45,7 @@ def main():
 
             for shot in shots:
                 if asteroid.collides_with(shot):
+                    player.score += asteroid.get_score_value()
                     shot.kill()
                     asteroid.split()
 
@@ -50,6 +53,9 @@ def main():
 
         for obj in drawable:
             obj.draw(screen)
+
+        score_text = FONT.render(f"Score: {player.score}", True, "white")
+        screen.blit(score_text, (10, 10))
 
         pygame.display.flip()
 

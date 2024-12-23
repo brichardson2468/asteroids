@@ -30,3 +30,11 @@ class Asteroid(CircleShape):
         asteroid.velocity = a * 1.2
         asteroid = Asteroid(self.position.x, self.position.y, new_radius)
         asteroid.velocity = b * 1.2
+
+    def get_score_value(self):
+        if self.radius == ASTEROID_MIN_RADIUS * 3:
+            return SCORE_LARGE_ASTEROID
+        elif self.radius == ASTEROID_MIN_RADIUS * 2:
+            return SCORE_MEDIUM_ASTEROID
+        else:
+            return SCORE_SMALL_ASTEROID

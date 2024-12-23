@@ -14,3 +14,8 @@ PLAYER_SHOOT_COOLDOWN = 0.3 # seconds
 PLAYER_SHOOT_SPEED = 500
 
 SHOT_RADIUS = 5
+
+# Scoring constants
+SCORE_LARGE_ASTEROID = 100    # For largest asteroids (radius = ASTEROID_MIN_RADIUS * 3)
+SCORE_MEDIUM_ASTEROID = 150   # For medium asteroids (radius = ASTEROID_MIN_RADIUS * 2)
+SCORE_SMALL_ASTEROID = 200    # For smallest asteroids (radius = ASTEROID_MIN_RADIUS)
